@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">EmergencyAmbulance_AndroidCSharp</string>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">EmergencyAmbulance_AndroidCSharp</string>
+  <string-array name="ambulance_array">
+    <item>Ambulancia XFC-456</item>
+    <item>Ambulancia XFC-457</item>
+    <item>Ambulancia XFC-458</item>
+    <item>Ambulancia XFC-459</item>
+    <item>Ambulancia XFC-461</item>
+    <item>Ambulancia XFC-462</item>
+    <item>Ambulancia XFC-463</item>
+    <item>Ambulancia XFC-464</item>
+    <item>Ambulancia XFC-465</item>
+    <item>Ambulancia XFC-466</item>
+  </string-array>
+  <string-array name="sexo">
+    <item>Hombre</item>
+    <item>Mujer</item>
+  </string-array>
+  <string-array name="tipo_sangre">
+    <item>A +</item>
+    <item>A -</item>
+    <item>B +</item>
+    <item>B -</item>
+    <item>O +</item>
+    <item>O -</item>
+    <item>AB +</item>
+    <item>AB -</item>
+  </string-array>
 </resources>
