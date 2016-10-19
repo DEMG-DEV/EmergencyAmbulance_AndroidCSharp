@@ -10,10 +10,11 @@ using System.Data;
 
 namespace EmergencyAmbulance_AndroidCSharp
 {
-    [Activity(Label = "Reporte - EmergencyAmbulance", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Reporte - EmergencyAmbulance", Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         string s1, s2, s3;
+        string connsqlstring = "Server={0};Port=3306;database=emergency;User Id={1};Password={2};charset=utf8";
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -21,6 +22,7 @@ namespace EmergencyAmbulance_AndroidCSharp
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
+            connsqlstring = string.Format(connsqlstring, Intent.Extras.GetString("servidor"), Intent.Extras.GetString("user"), Intent.Extras.GetString("pass"));
             // Get our button from the layout resource,
             // and attach an event to it
             Spinner spinner1 = FindViewById<Spinner>(Resource.Id.spinner1);
@@ -56,7 +58,7 @@ namespace EmergencyAmbulance_AndroidCSharp
 
             enviar.Click += (object sender, EventArgs e) =>
             {
-                string connsqlstring = "Server=192.168.0.15;Port=3306;database=emergency;User Id=root;Password=root;charset=utf8";
+
                 Object[] data = new Object[10];
 
                 EditText nombre = FindViewById<EditText>(Resource.Id.txtNombre);
