@@ -19,7 +19,8 @@ namespace EmergencyAmbulance_AndroidCSharp
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
+            //a partir de aqui se programa
+            base.OnCreate(savedInstanceState);            
 
             SetContentView(Resource.Layout.Login);
 
