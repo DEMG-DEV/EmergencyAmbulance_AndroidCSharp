@@ -14,7 +14,7 @@ using System.Data;
 
 namespace EmergencyAmbulance_AndroidCSharp
 {
-    [Activity(Label = "Login - EmergencyAmbulance", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Theme = "@style/ThemeCustom", Label = "Login - EmergencyAmbulance", MainLauncher = true, Icon = "@drawable/icon")]
     public class Login : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

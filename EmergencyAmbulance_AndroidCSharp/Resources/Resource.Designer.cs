@@ -222,7 +222,7 @@ namespace EmergencyAmbulance_AndroidCSharp
 		{
 			
 			// aapt resource value: 0x7f070000
-			public const int Theme_Custom = 2131165184;
+			public const int ThemeCustom = 2131165184;
 			
 			static Style()
 			{
