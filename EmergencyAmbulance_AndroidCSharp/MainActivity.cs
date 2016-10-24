@@ -10,7 +10,7 @@ using System.Data;
 
 namespace EmergencyAmbulance_AndroidCSharp
 {
-    [Activity(Theme = "@style/ThemeCustom", Label = "Reporte - EmergencyAmbulance", Icon = "@drawable/icon")]
+    [Activity(Theme = "@style/ThemeCustom", Label = "Reporte - EmergencyAmbulance", Icon = "@drawable/logo")]
     public class MainActivity : Activity
     {
         string s1, s2, s3;

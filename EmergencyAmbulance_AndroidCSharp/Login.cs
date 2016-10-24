@@ -14,13 +14,13 @@ using System.Data;
 
 namespace EmergencyAmbulance_AndroidCSharp
 {
-    [Activity(Theme = "@style/ThemeCustom", Label = "Login - EmergencyAmbulance", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Theme = "@style/ThemeCustom", Label = "EmergencyAmbulance", MainLauncher = true, Icon = "@drawable/logo")]
     public class Login : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             //a partir de aqui se programa
-            base.OnCreate(savedInstanceState);            
+            base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Login);
 
