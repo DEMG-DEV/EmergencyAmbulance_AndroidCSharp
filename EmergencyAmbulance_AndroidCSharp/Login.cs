@@ -14,7 +14,7 @@ using System.Data;
 
 namespace EmergencyAmbulance_AndroidCSharp
 {
-    [Activity(Theme = "@style/ThemeCustom", Label = "EmergencyAmbulance", MainLauncher = true, Icon = "@drawable/logo")]
+    [Activity(MainLauncher = true, Theme = "@style/ThemeCustom", Label = "EmergencyAmbulance", Icon = "@drawable/logo")]
     public class Login : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -36,7 +36,7 @@ namespace EmergencyAmbulance_AndroidCSharp
                 //string toast = string.Format("" + servidor.Text.ToString() + " " + user.Text.ToString() + " " + pass.Text.ToString());
                 //Toast.MakeText(this, toast, ToastLength.Long).Show();
 
-                string connsqlstring = "Server={0};Port=3306;database=emergency;User Id={1};Password={2};charset=utf8";
+                string connsqlstring = "Server={0};Port=3306;database=emergency;Uid={1};Pwd={2};";
                 connsqlstring = string.Format(connsqlstring, servidor.Text, user.Text, pass.Text);
 
                 MySqlConnection sqlconn = new MySqlConnection(connsqlstring);
@@ -49,7 +49,7 @@ namespace EmergencyAmbulance_AndroidCSharp
                     MySqlCommand da = new MySqlCommand(Query, sqlconn);
                     string conexion = da.ExecuteScalar().ToString();
 
-                    string toast = string.Format(" Aviso: " + conexion);
+                    string toast = string.Format(" Aviso: Conexion Exitosa");
                     Toast.MakeText(this, toast, ToastLength.Long).Show();
 
 
@@ -64,7 +64,7 @@ namespace EmergencyAmbulance_AndroidCSharp
                 }
                 catch (Exception ex)
                 {
-                    string toast = string.Format(" Aviso: Error al Conectar a la Base de Datos");
+                    string toast = string.Format(" Aviso: "+ex.Message);
                     Toast.MakeText(this, toast, ToastLength.Long).Show();
                 }
                 finally

@@ -14,7 +14,7 @@ namespace EmergencyAmbulance_AndroidCSharp
     public class MainActivity : Activity
     {
         string s1, s2, s3;
-        string connsqlstring = "Server={0};Port=3306;database=emergency;User Id={1};Password={2};charset=utf8";
+        string connsqlstring = "Server={0};Port=3306;database=emergency;User Id={1};Password={2};";
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -64,8 +64,10 @@ namespace EmergencyAmbulance_AndroidCSharp
                 EditText nombre = FindViewById<EditText>(Resource.Id.txtNombre);
                 EditText apellido = FindViewById<EditText>(Resource.Id.txtApellido);
                 EditText edad = FindViewById<EditText>(Resource.Id.txtEdad);
-                EditText presion = FindViewById<EditText>(Resource.Id.txtPresion);
-                EditText pulso = FindViewById<EditText>(Resource.Id.txtPulso);
+                EditText presion1 = FindViewById<EditText>(Resource.Id.txtPresion1);
+                EditText presion2 = FindViewById<EditText>(Resource.Id.txtPresion2);
+                EditText pulso1 = FindViewById<EditText>(Resource.Id.txtPulso1);
+                EditText pulso2 = FindViewById<EditText>(Resource.Id.txtPulso2);
                 EditText diagnostico = FindViewById<EditText>(Resource.Id.txtDiagnostico);
 
                 //Select id
@@ -101,13 +103,33 @@ namespace EmergencyAmbulance_AndroidCSharp
                 }
 
                 DateTime thisDay = DateTime.Now;
+                string pres1 = presion1.Text.ToString(), pres2 = presion2.Text.ToString();
+                if (pres1 == "")
+                {
+                    pres1 = "X";
+                }
+                if (pres2 == "")
+                {
+                    pres2 = "X";
+                }
+
+                string puls1 = pulso1.Text.ToString(), puls2 = pulso2.Text.ToString();
+                if (puls1 == "")
+                {
+                    puls1 = "X";
+                }
+                if (puls2 == "")
+                {
+                    puls2 = "X";
+                }
+
                 data[1] = thisDay.Day.ToString() + "/" + thisDay.Month.ToString() + "/" + thisDay.Year.ToString() + " " + thisDay.Hour.ToString() + ":" + thisDay.Minute.ToString() + ":" + thisDay.Second.ToString();
                 data[2] = nombre.Text.ToString();
                 data[3] = apellido.Text.ToString();
                 data[4] = s2;
                 data[5] = edad.Text.ToString();
-                data[6] = presion.Text.ToString();
-                data[7] = pulso.Text.ToString();
+                data[6] = pres1 + "/" + pres2;
+                data[7] = puls1 + "-" + puls2;
                 data[8] = s3;
                 data[9] = diagnostico.Text.ToString();
 
@@ -132,7 +154,7 @@ namespace EmergencyAmbulance_AndroidCSharp
                 }
                 catch (Exception ex)
                 {
-                    Toast.MakeText(this, ex.Message, ToastLength.Long).Show();
+                    Toast.MakeText(this, "Error al Guardar checa la Informacion insertada", ToastLength.Long).Show();
                 }
             };
         }
