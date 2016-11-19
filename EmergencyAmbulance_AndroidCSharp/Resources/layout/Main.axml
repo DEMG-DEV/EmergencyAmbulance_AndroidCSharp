@@ -6,8 +6,7 @@
     android:scrollbars="horizontal">
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true">
+        android:layout_height="fill_parent">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -69,20 +68,72 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView8" />
-            <EditText
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="35.5dp"
-                android:id="@+id/txtPresion" />
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="36.0dp">
+                    <EditText
+                        android:layout_width="100dp"
+                        android:layout_height="35.5dp"
+                        android:id="@+id/txtPresion1"
+                        android:inputType="number" />
+                    <TextView
+                        android:text="/"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView12"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5px"
+                        android:gravity="center"
+                        android:layout_toRightOf="@id/txtPresion1" />
+                    <EditText
+                        android:layout_width="100dp"
+                        android:layout_height="35.5dp"
+                        android:id="@+id/txtPresion2"
+                        android:inputType="number"
+                        android:layout_toRightOf="@id/textView12" />
+                </RelativeLayout>
+            </LinearLayout>
             <TextView
                 android:text="Pulso:"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView9" />
-            <EditText
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="35.5dp"
-                android:id="@+id/txtPulso" />
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="36.0dp">
+                    <EditText
+                        android:layout_width="100dp"
+                        android:layout_height="35.5dp"
+                        android:id="@+id/txtPulso1"
+                        android:inputType="number" />
+                    <TextView
+                        android:text="-"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView13"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5px"
+                        android:gravity="center"
+                        android:layout_toRightOf="@id/txtPulso1" />
+                    <EditText
+                        android:layout_width="100dp"
+                        android:layout_height="35.5dp"
+                        android:id="@+id/txtPulso2"
+                        android:inputType="number"
+                        android:layout_toRightOf="@id/textView13" />
+                </RelativeLayout>
+            </LinearLayout>
             <TextView
                 android:text="Tipo Sangre:"
                 android:textAppearance="?android:attr/textAppearanceMedium"
